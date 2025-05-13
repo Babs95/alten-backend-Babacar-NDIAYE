@@ -5,6 +5,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import sn.babacar.alten.test.dtos.ProductDTO;
 import sn.babacar.alten.test.entities.Product;
@@ -19,16 +20,11 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
   private final ProductRepository productRepository;
   private final ProductMapper productMapper;
-
-  @Autowired
-  public ProductServiceImpl(ProductRepository productRepository, ProductMapper productMapper) {
-    this.productRepository = productRepository;
-    this.productMapper = productMapper;
-  }
 
   @Override
   public ProductDTO createProduct(ProductDTO productDTO) throws CustomException {
