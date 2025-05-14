@@ -19,6 +19,12 @@ Ce projet est une API REST complète pour une plateforme e-commerce, développé
 * **Base de données** :
    * PostgreSQL
 
+* **Tests** :
+
+  * JUnit 5
+  * Mockito
+  * TestContainers (tests d'intégration avec PostgreSQL)
+
 * **Outils de développement** :
    * Lombok (réduction de code boilerplate)
    * MapStruct (mapping objet-objet)
