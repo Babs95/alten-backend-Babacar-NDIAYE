@@ -31,7 +31,13 @@ import lombok.extern.slf4j.Slf4j;
 public class SecurityConfig {
   private static final String[] WHITELIST = {
       "/account",
-      "/token"
+      "/token",
+      "/v1/public/**",
+      "/swagger-ui/**",
+      "/swagger-ui.html",
+      "/v3/api-docs/**",
+      "/swagger-resources/**",
+      "/webjars/**"
   };
 
   private final JwtRequestFilter jwtRequestFilter;

@@ -1,6 +1,8 @@
 package sn.babacar.alten.test.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,10 +17,15 @@ import java.util.Map;
 @NoArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Schema(description = "Format de réponse standard pour toutes les API")
 public class CustomResponse {
+  @Schema(description = "Message décrivant le statut de la réponse", example = "Success")
   private String status;
+  @Schema(description = "Code de statut HTTP", example = "200")
   private Integer statusCode;
+  @Schema(description = "Description détaillée du résultat", example = "Products retrieved successfully")
   private String message;
+  @Schema(description = "Données de la réponse, peut être un objet ou une collection")
   private Object data;
 
   public CustomResponse(String status, int statusCode, String message, Object data) {

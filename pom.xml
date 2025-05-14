@@ -31,6 +31,7 @@
 		<mapstruct.version>1.5.5.Final</mapstruct.version>
 		<spring-security.version>6.4.4</spring-security.version>
 		<jsonwebtoken.version>0.11.5</jsonwebtoken.version>
+		<springdoc.version>2.8.0</springdoc.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -44,6 +45,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- SpringDoc OpenAPI (Swagger) -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc.version}</version>
 		</dependency>
 
 		<dependency>
