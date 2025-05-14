@@ -95,6 +95,29 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
+  public Product getProductEntityById(Long id) throws CustomException {
+    if (id == null) {
+      throw new CustomException(
+          new IllegalArgumentException("Product ID is required"),
+          Constants.PRODUCT_GET_FAILURE_ILLEGAL_ARGUMENT
+      );
+    }
+
+    try {
+      return productRepository.findById(id)
+          .orElseThrow(() -> new CustomException(
+              new EntityNotFoundException(String.format(Constants.NOT_FOUND_ENTITY, "Product", "with id", id)),
+              Constants.PRODUCT_GET_FAILURE_NOT_FOUND
+          ));
+
+    } catch (CustomException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new CustomException(e, Constants.PRODUCT_GET_FAILURE);
+    }
+  }
+
+  @Override
   @Transactional(rollbackFor = Exception.class)
   public ProductDTO updateProduct(Long id, ProductDTO productDTO) throws CustomException {
     if (id == null || productDTO == null) {

@@ -45,6 +45,20 @@ public class Constants {
   public static final String CART_UPDATE_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for cart update";
   public static final String CART_ITEM_GET_FAILURE_NOT_FOUND = "Cart item not found";
 
+  // WISHLIST
+  public static final String WISHLIST_GET_SUCCESS = "Wishlist retrieved successfully";
+  public static final String WISHLIST_ADD_SUCCESS = "Product added to wishlist successfully";
+  public static final String WISHLIST_REMOVE_SUCCESS = "Product removed from wishlist successfully";
+  public static final String WISHLIST_CLEAR_SUCCESS = "Wishlist cleared successfully";
+  public static final String WISHLIST_GET_FAILURE = "Failed to retrieve wishlist";
+  public static final String WISHLIST_UPDATE_FAILURE = "Failed to update wishlist";
+  public static final String WISHLIST_CLEAR_FAILURE = "Failed to clear wishlist";
+  public static final String WISHLIST_GET_FAILURE_NOT_FOUND = "Wishlist not found";
+  public static final String WISHLIST_GET_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for wishlist retrieval";
+  public static final String WISHLIST_UPDATE_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for wishlist update";
+  public static final String WISHLIST_ITEM_GET_FAILURE_NOT_FOUND = "Product not found in wishlist";
+  public static final String WISHLIST_PRODUCT_ALREADY_EXISTS = "Product already exists in wishlist";
+
   private Constants() {
     throw new IllegalStateException("Constants class");
   }

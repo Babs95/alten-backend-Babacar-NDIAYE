@@ -65,19 +65,42 @@ Ce projet est une API REST complète pour une plateforme e-commerce, développé
 ## Structure du Projet
 
 ```
-src/main/java/sn/babacar/alten/test/
-├── config/          # Configuration Spring et Swagger
-├── controller/      # Contrôleurs REST (endpoints)
-├── dtos/            # Objets de transfert de données
-├── entities/        # Entités JPA
-├── exception/       # Gestion des exceptions
-├── mapper/          # Mappeurs MapStruct
-├── repositories/    # Repositories Spring Data
-├── request/         # Objets de requête standardisés
-├── response/        # Objets de réponse standardisés
-├── security/        # Configuration de sécurité et JWT
-├── services/        # Logique métier
-└── util/            # Classes utilitaires
+src/
+├── main/java/sn/babacar/alten/test/
+│   ├── config/          # Configuration Spring et Swagger
+│   ├── controller/      # Contrôleurs REST (endpoints)
+│   ├── dtos/            # Objets de transfert de données
+│   ├── entities/        # Entités JPA
+│   ├── exception/       # Gestion des exceptions
+│   ├── mapper/          # Mappeurs MapStruct
+│   ├── repositories/    # Repositories Spring Data
+│   ├── request/         # Objets de requête standardisés
+│   ├── response/        # Objets de réponse standardisés
+│   ├── security/        # Configuration de sécurité et JWT
+│   ├── services/        # Logique métier
+│   └── util/            # Classes utilitaires
+└── test/java/sn/babacar/alten/test/
+    ├── integration/     # Tests d'intégration avec TestContainers
+    ├── services/        # Tests unitaires des services
+    └── util/            # Classes utilitaires pour les tests
+```
+## Tests
+Le projet comprend quelques tests pour garantir la qualité et la fiabilité du code :
+
+### Tests Unitaires
+
+ * Tests de services : Couvrent la logique métier avec des mocks pour les dépendances
+ * Tests de contrôleurs : Vérifient le comportement des endpoints REST
+
+### Tests d'Intégration
+
+ * Utilisent TestContainers pour créer une instance PostgreSQL isolée (postgres:16.3-alpine)
+ * Testent l'interaction complète entre les composants de l'application
+ * Vérifient le comportement des API dans un environnement proche de la production
+
+Pour exécuter tous les tests :
+```bash
+mvn test
 ```
 
 ## Documentation de l'API (Swagger)
