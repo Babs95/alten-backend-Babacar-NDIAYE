@@ -24,11 +24,26 @@ public class Constants {
   public static final String USER_REGISTER_FAILURE = "Failed to register user";
   public static final String USER_REGISTER_FAILURE_ENTITY_EXIST = "User with this email already exists";
   public static final String USER_REGISTER_FAILURE_ILLEGAL_ARGUMENT = "Invalid user registration data provided";
+  public static final String USER_GET_FAILURE = "Failed to retrieve user(s)";
+  public static final String USER_GET_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument for user retrieval";
+  public static final String USER_GET_FAILURE_NOT_FOUND = "User not found";
   public static final String USER_AUTH_SUCCESS = "User authenticated successfully";
   public static final String USER_AUTH_FAILURE = "Authentication failed";
   public static final String USER_AUTH_FAILURE_NOT_FOUND = "User not found";
   public static final String USER_AUTH_FAILURE_INVALID_CREDENTIALS = "Invalid credentials";
   public static final String USER_AUTH_FAILURE_ILLEGAL_ARGUMENT = "Email and password are required for authentication";
+
+  // CART
+  public static final String CART_GET_SUCCESS = "Cart retrieved successfully";
+  public static final String CART_UPDATE_SUCCESS = "Cart updated successfully";
+  public static final String CART_CLEAR_SUCCESS = "Cart cleared successfully";
+  public static final String CART_GET_FAILURE = "Failed to retrieve cart";
+  public static final String CART_UPDATE_FAILURE = "Failed to update cart";
+  public static final String CART_CLEAR_FAILURE = "Failed to clear cart";
+  public static final String CART_GET_FAILURE_NOT_FOUND = "Cart not found";
+  public static final String CART_GET_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for cart retrieval";
+  public static final String CART_UPDATE_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for cart update";
+  public static final String CART_ITEM_GET_FAILURE_NOT_FOUND = "Cart item not found";
 
   private Constants() {
     throw new IllegalStateException("Constants class");

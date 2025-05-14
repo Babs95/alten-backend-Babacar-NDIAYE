@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import sn.babacar.alten.test.config.security.JwtUtil;
 import sn.babacar.alten.test.dtos.UserDTO;
+import sn.babacar.alten.test.entities.Product;
 import sn.babacar.alten.test.entities.User;
 import sn.babacar.alten.test.exception.CustomException;
 import sn.babacar.alten.test.repositories.UserRepository;
@@ -109,5 +110,27 @@ public class UserServiceImpl implements UserService {
       return false;
     }
     return ADMIN_EMAIL.equals(email);
+  }
+
+  @Override
+  public User getUserByEmail(String email) throws CustomException {
+    if (email == null) {
+      throw new CustomException(
+          new IllegalArgumentException("User email is required"),
+          Constants.USER_GET_FAILURE_ILLEGAL_ARGUMENT
+      );
+    }
+
+    try {
+      return userRepository.findByEmail(email)
+          .orElseThrow(() -> new CustomException(
+              new EntityNotFoundException("User not found with email: " + email),
+              Constants.USER_GET_FAILURE_NOT_FOUND
+          ));
+    } catch (CustomException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new CustomException(e, Constants.USER_GET_FAILURE);
+    }
   }
 }
