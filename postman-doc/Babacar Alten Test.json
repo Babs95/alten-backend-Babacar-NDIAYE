@@ -1,0 +1,252 @@
+{
+  "info": {
+    "name": "Babacar Alten Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "Create Product (Admin)",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/products",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"prod-001\",\n  \"name\": \"New Product\",\n  \"description\": \"Description of the new product\",\n  \"image\": \"new-product.jpg\",\n  \"category\": \"Electronics\",\n  \"price\": 149.99,\n  \"quantity\": 25,\n  \"internalReference\": \"INT-NEW-001\",\n  \"shellId\": 2001,\n  \"inventoryStatus\": \"INSTOCK\",\n  \"rating\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Product (Admin)",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/products/2"
+          }
+        },
+        {
+          "name": "Get Product by ID",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/products/1"
+          }
+        },
+        {
+          "name": "Get Products",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/products"
+          }
+        },
+        {
+          "name": "Update Product (Admin)",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/products/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Updated product description\",\n  \"price\": 129.99,\n  \"quantity\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Create Account",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/api/account",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"firstname\": \"Test\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Login (Admin)",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/api/token",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"admin123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Login (User)",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/api/token",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "carts",
+      "item": [
+        {
+          "name": "Get User Cart",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/cart"
+          }
+        },
+        {
+          "name": "Add Product Cart",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/cart/products/1?quantity=2"
+          }
+        },
+        {
+          "name": "Update Cart Item Qty",
+          "event": [],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/cart/items/3?quantity=3",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Updated product description\",\n  \"price\": 129.99,\n  \"quantity\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Item To Cart",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/cart/products/2"
+          }
+        },
+        {
+          "name": "Empty Cart",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/cart"
+          }
+        }
+      ]
+    },
+    {
+      "name": "wishlists",
+      "item": [
+        {
+          "name": "Get User Wishlist",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/wishlist"
+          }
+        },
+        {
+          "name": "Add Product Wishlist",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/wishlist/products/1?quantity=2"
+          }
+        },
+        {
+          "name": "Delete Item To Wishlist",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/wishlist/products/2"
+          }
+        },
+        {
+          "name": "Empty Wishlist",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/wishlist"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "adminToken",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "userToken",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
