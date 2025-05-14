@@ -90,10 +90,10 @@ Le projet comprend quelques tests pour garantir la qualité et la fiabilité du 
 ### Tests Unitaires
 
  * Tests de services : Couvrent la logique métier avec des mocks pour les dépendances
- * Tests de contrôleurs : Vérifient le comportement des endpoints REST
 
 ### Tests d'Intégration
 
+ * Tests de contrôleurs : Vérifient le comportement des endpoints REST
  * Utilisent TestContainers pour créer une instance PostgreSQL isolée (postgres:16.3-alpine)
  * Testent l'interaction complète entre les composants de l'application
  * Vérifient le comportement des API dans un environnement proche de la production
