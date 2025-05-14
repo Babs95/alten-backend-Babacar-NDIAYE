@@ -33,3 +33,7 @@ logging:
     root: INFO
     sn.babacar.alten.test: DEBUG
     org.springframework.security: DEBUG
+
+alten:
+  endpoints:
+    frontend: ${FRONTEND_URL:http://localhost:4200, http://localhost:3000}

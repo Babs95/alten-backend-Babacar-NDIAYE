@@ -3,6 +3,7 @@ package sn.babacar.alten.test.services.mapper;
 import org.mapstruct.*;
 import sn.babacar.alten.test.dtos.UserDTO;
 import sn.babacar.alten.test.entities.User;
+import sn.babacar.alten.test.response.TokenResponse;
 
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface UserMapper {
@@ -13,4 +14,6 @@ public interface UserMapper {
   User toEntity(UserDTO dto);
 
   UserDTO toDto(User entity);
+
+  TokenResponse toTokenResponse(User entity, String token);
 }

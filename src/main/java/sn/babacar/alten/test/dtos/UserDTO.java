@@ -13,20 +13,3 @@ public class UserDTO {
   private String email;
   private String password;
 }
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-class UserLoginDTO {
-  private String email;
-  private String password;
-}
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-class TokenResponseDTO {
-  private String token;
-  private String email;
-  private String username;
-}

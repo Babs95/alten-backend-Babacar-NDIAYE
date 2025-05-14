@@ -1,5 +1,7 @@
 package sn.babacar.alten.test.entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -50,20 +52,20 @@ public class Product {
   private Integer rating;
 
   @Column(name = "created_at")
-  private Long createdAt;
+  private LocalDateTime createdAt;
 
   @Column(name = "updated_at")
-  private Long updatedAt;
+  private LocalDateTime updatedAt;
 
   @PrePersist
   protected void onCreate() {
-    this.createdAt = System.currentTimeMillis();
-    this.updatedAt = System.currentTimeMillis();
+    this.createdAt = LocalDateTime.now();
+    this.updatedAt = LocalDateTime.now();
   }
 
   @PreUpdate
   protected void onUpdate() {
-    this.updatedAt = System.currentTimeMillis();
+    this.updatedAt = LocalDateTime.now();
   }
 
   public enum InventoryStatus {

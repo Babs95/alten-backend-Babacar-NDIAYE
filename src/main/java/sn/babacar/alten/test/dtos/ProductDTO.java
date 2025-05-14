@@ -1,5 +1,7 @@
 package sn.babacar.alten.test.dtos;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +23,6 @@ public class ProductDTO {
   private Long shellId;
   private InventoryStatus inventoryStatus;
   private Integer rating;
-  private Long createdAt;
-  private Long updatedAt;
+  private LocalDateTime createdAt;
+  private LocalDateTime updatedAt;
 }

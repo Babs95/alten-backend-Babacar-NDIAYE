@@ -7,15 +7,31 @@ public class Constants {
   public static final String PRODUCT_PUT_SUCCESS = "Product updated successfully";
   public static final String PRODUCT_GET_SUCCESS = "Product(s) retrieved successfully";
   public static final String PRODUCT_GET_FAILURE = "Failed to retrieve product(s)";
-  public static final String PRODUCT_POST_FAILURE_BAD_REQUEST = "Invalid product data provided";
   public static final String PRODUCT_PUT_FAILURE = "Failed to update product";
   public static final String PRODUCT_POST_FAILURE_ENTITY_EXIST = "Product with this identifier already exists";
-  public static final String PRODUCT_POST_FAILURE_UNAUTHORIZE = "Unauthorized to create product";
   public static final String PRODUCT_GET_FAILURE_NOT_FOUND = "Product not found";
   public static final String PRODUCT_POST_FAILURE = "Failed to create product";
-  public static final String PRODUCT_GET_FAILURE_UNAUTHORIZE = "Unauthorized to access product information";
   public static final String PRODUCT_GET_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for product retrieval";
-  public static final String PRODUCT_GET_FAILURE_BAD_REQUEST = "Bad request for product retrieval";
+  public static final String PRODUCT_DELETE_FAILURE = "Failed to delete product";
+  public static final String PRODUCT_POST_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for product creation";
+  public static final String PRODUCT_PUT_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for product update";
+  public static final String PRODUCT_DELETE_FAILURE_ILLEGAL_ARGUMENT = "Invalid argument provided for product deletion";
+  public static final String PRODUCT_DELETE_SUCCESS = "Product deleted successfully";
+
+  // USER
+  public static final String USER_REGISTER_SUCCESS = "User registered successfully";
+  public static final String USER_REGISTER_FAILURE = "Failed to register user";
+  public static final String USER_REGISTER_FAILURE_ENTITY_EXIST = "User with this email already exists";
+  public static final String USER_REGISTER_FAILURE_ILLEGAL_ARGUMENT = "Invalid user registration data provided";
+  public static final String USER_AUTH_SUCCESS = "User authenticated successfully";
+  public static final String USER_AUTH_FAILURE = "Authentication failed";
+  public static final String USER_AUTH_FAILURE_NOT_FOUND = "User not found";
+  public static final String USER_AUTH_FAILURE_INVALID_CREDENTIALS = "Invalid credentials";
+  public static final String USER_AUTH_FAILURE_ILLEGAL_ARGUMENT = "Email and password are required for authentication";
+
+  private Constants() {
+    throw new IllegalStateException("Constants class");
+  }
 
   public static class Status {
     public static final int OK = 200;
@@ -27,6 +43,10 @@ public class Constants {
     public static final int CONFLICT = 409;
     public static final int NO_CONTENT = 204;
     public static final int METHOD_NOT_ALLOWED = 405;
+
+    private Status() {
+      throw new IllegalStateException("Constants Status class");
+    }
   }
 
   public static class Message {
@@ -40,5 +60,9 @@ public class Constants {
     public static final String CONFLICT_BODY = "Conflict";
     public static final String NO_CONTENT_BODY = "No content";
     public static final String METHOD_NOT_ALLOWED_BODY = "Method Not Allowed";
+
+    private Message() {
+      throw new IllegalStateException("Constants Message class");
+    }
   }
 }
