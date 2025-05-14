@@ -44,7 +44,7 @@ Ce projet est une API REST complète pour une plateforme e-commerce, développé
 
 1. **Cloner le dépôt** :
    ```bash
-   git clone https://github.com/votre-username/Alten-backend-Babacar-NDIAYE.git
+   git clone https://github.com/Babs95/alten-backend-Babacar-NDIAYE.git
    cd Alten-backend-Babacar-NDIAYE
    ```
 
@@ -68,11 +68,12 @@ Ce projet est une API REST complète pour une plateforme e-commerce, développé
 src/main/java/sn/babacar/alten/test/
 ├── config/          # Configuration Spring et Swagger
 ├── controller/      # Contrôleurs REST (endpoints)
-├── dto/             # Objets de transfert de données
+├── dtos/            # Objets de transfert de données
 ├── entities/        # Entités JPA
 ├── exception/       # Gestion des exceptions
 ├── mapper/          # Mappeurs MapStruct
 ├── repositories/    # Repositories Spring Data
+├── request/         # Objets de requête standardisés
 ├── response/        # Objets de réponse standardisés
 ├── security/        # Configuration de sécurité et JWT
 ├── services/        # Logique métier
@@ -143,5 +144,3 @@ Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 ## Contact
 
 Babacar NDIAYE - [babacar.ndiayepro07@gmail.com] - [https://www.linkedin.com/in/babacar-ndiaye-8abb2a160/]
-
-Projet GitHub: https://github.com/Babs95/alten-backend-Babacar-NDIAYE.git
