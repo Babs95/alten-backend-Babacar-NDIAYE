@@ -49,7 +49,7 @@ Ce projet est une API REST complète pour une plateforme e-commerce, développé
    ```
 
 2. **Configurer la base de données** :
-   * Créez une base de données PostgreSQL nommée `alten`
+   * Créez une base de données PostgreSQL nommée `alten_test_db`
    * Configurez les informations de connexion dans `src/main/resources/application.yml` si nécessaire
 
 3. **Compiler et exécuter l'application** :
