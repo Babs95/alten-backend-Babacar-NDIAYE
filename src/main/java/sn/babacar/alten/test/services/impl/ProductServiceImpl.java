@@ -82,7 +82,7 @@ public class ProductServiceImpl implements ProductService {
     try {
       Product product = productRepository.findById(id)
           .orElseThrow(() -> new CustomException(
-              new EntityNotFoundException("Product not found with id: " + id),
+              new EntityNotFoundException(String.format(Constants.NOT_FOUND_ENTITY, "Product", "with id", id)),
               Constants.PRODUCT_GET_FAILURE_NOT_FOUND
           ));
 
@@ -109,7 +109,7 @@ public class ProductServiceImpl implements ProductService {
     try {
       Product existingProduct = productRepository.findById(id)
           .orElseThrow(() -> new CustomException(
-              new EntityNotFoundException("Product not found with id: " + id),
+              new EntityNotFoundException(String.format(Constants.NOT_FOUND_ENTITY, "Product", "with id", id)),
               Constants.PRODUCT_GET_FAILURE_NOT_FOUND
           ));
 
@@ -144,7 +144,7 @@ public class ProductServiceImpl implements ProductService {
     try {
       if (!productRepository.existsById(id)) {
         throw new CustomException(
-            new EntityNotFoundException("Product not found with id: " + id),
+            new EntityNotFoundException(String.format(Constants.NOT_FOUND_ENTITY, "Product", "with id", id)),
             Constants.PRODUCT_GET_FAILURE_NOT_FOUND
         );
       }

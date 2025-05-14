@@ -1,6 +1,11 @@
 package sn.babacar.alten.test.services.mapper;
 
-import org.mapstruct.*;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.BeanMapping;
+
 import sn.babacar.alten.test.dtos.ProductDTO;
 import sn.babacar.alten.test.entities.Product;
 

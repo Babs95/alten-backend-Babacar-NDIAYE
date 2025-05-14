@@ -1,19 +1,12 @@
 package sn.babacar.alten.test.services.mapper;
 
-import org.mapstruct.*;
-import sn.babacar.alten.test.dtos.UserDTO;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.Mapper;
+
 import sn.babacar.alten.test.entities.User;
 import sn.babacar.alten.test.response.TokenResponse;
 
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface UserMapper {
-
-  @Mapping(target = "id", ignore = true)
-  @Mapping(target = "createdAt", ignore = true)
-  @Mapping(target = "updatedAt", ignore = true)
-  User toEntity(UserDTO dto);
-
-  UserDTO toDto(User entity);
-
   TokenResponse toTokenResponse(User entity, String token);
 }

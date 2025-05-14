@@ -1,6 +1,7 @@
 package sn.babacar.alten.test.util;
 
 public class Constants {
+  public static final String NOT_FOUND_ENTITY = "Not Found %s %s %s";
 
   // PRODUCT
   public static final String PRODUCT_POST_SUCCESS = "Product created successfully";
